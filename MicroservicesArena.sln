@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35521.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{5B62E334-4B7B-4466-851B-F03DFF00F4C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApi", "src\Examples\TodoApi\TodoApi.csproj", "{5C517023-E501-46DE-A322-23A49DFDCAF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B1CCA44A-166B-4077-8C3F-635B87EA005E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{35908E11-A23B-479E-B775-4BB61A331293}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2EF68268-E8A1-4D74-9963-82A2C341A2F8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C517023-E501-46DE-A322-23A49DFDCAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C517023-E501-46DE-A322-23A49DFDCAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C517023-E501-46DE-A322-23A49DFDCAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C517023-E501-46DE-A322-23A49DFDCAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5C517023-E501-46DE-A322-23A49DFDCAF9} = {5B62E334-4B7B-4466-851B-F03DFF00F4C5}
+		{35908E11-A23B-479E-B775-4BB61A331293} = {B1CCA44A-166B-4077-8C3F-635B87EA005E}
+	EndGlobalSection
+EndGlobal
