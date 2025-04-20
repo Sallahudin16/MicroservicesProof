@@ -19,7 +19,7 @@
             Product? product = await _session.LoadAsync<Product>(request.Id, cancellationToken);
 
             return product is null 
-                ? throw new ProductNotFoundException() 
+                ? throw new ProductNotFoundException(request.Id) 
                 : new GetProductByIdResult(product);
         }
     }

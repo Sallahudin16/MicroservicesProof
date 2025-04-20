@@ -2,6 +2,8 @@
 global using Mapster;
 global using MediatR;
 global using Marten;
+global using FluentValidation;
+global using SharedKernel.Exceptions;
 global using Catalog.API.Models;
 global using Catalog.API.Exceptions;
 global using SharedKernel.Abstractions.CQRS;

@@ -1,8 +1,36 @@
 ﻿
+using Catalog.API.Products.CreateProduct;
+
 namespace Catalog.API.Products.UpdateProduct
 {
     public record UpdateProductCommand(Guid Id, string Name, List<string> Categories, string Description, string ImageFile, decimal Price) : ICommand<UpdateProductCommandResult>;
     public record UpdateProductCommandResult(bool IsSuccess);
+
+    public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
+    {
+        public UpdateProductCommandValidator()
+        {
+            RuleFor(x => x.Id)
+                .NotEmpty()
+                .WithMessage("ID is Required");
+
+            RuleFor(x => x.Name)
+                .NotEmpty().WithMessage("Name is Required")
+                .Length(2, 150).WithMessage("Name Must be between 2 and 150 characters");
+
+            RuleFor(x => x.Categories)
+                .NotEmpty()
+                .WithMessage("Atleast one Category is Required");
+
+            RuleFor(x => x.ImageFile)
+                .NotEmpty()
+                .WithMessage("Image is Required");
+
+            RuleFor(x => x.Price)
+                .GreaterThan(0)
+                .WithMessage("Price must be more than 0");
+        }
+    }
 
     public class UpdateProductHandler : ICommandHandler<UpdateProductCommand, UpdateProductCommandResult>
     {
@@ -20,7 +48,7 @@ namespace Catalog.API.Products.UpdateProduct
             _logger.LogInformation("Updating product with id {Id}", request.Id);
 
             Product product = await _session.LoadAsync<Product>(request.Id, cancellationToken) 
-                ?? throw new ProductNotFoundException();
+                ?? throw new ProductNotFoundException(request.Id);
             
             product.Name = request.Name;
             product.Categories = request.Categories;
