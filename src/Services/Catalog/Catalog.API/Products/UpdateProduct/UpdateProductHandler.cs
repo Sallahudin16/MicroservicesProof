@@ -35,17 +35,14 @@ namespace Catalog.API.Products.UpdateProduct
     public class UpdateProductHandler : ICommandHandler<UpdateProductCommand, UpdateProductCommandResult>
     {
         private readonly IDocumentSession _session;
-        private readonly ILogger<UpdateProductHandler> _logger;
 
-        public UpdateProductHandler(IDocumentSession session, ILogger<UpdateProductHandler> logger)
+        public UpdateProductHandler(IDocumentSession session)
         {
             _session = session;
-            _logger = logger;
         }
 
         public async Task<UpdateProductCommandResult> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Updating product with id {Id}", request.Id);
 
             Product product = await _session.LoadAsync<Product>(request.Id, cancellationToken) 
                 ?? throw new ProductNotFoundException(request.Id);
