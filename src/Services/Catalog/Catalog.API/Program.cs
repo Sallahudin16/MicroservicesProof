@@ -1,3 +1,4 @@
+using Catalog.API.Data;
 using SharedKernel.Exceptions.Handler;
 using SharedKernel.PipelineBehaviors;
 
@@ -13,7 +14,13 @@ builder.Services.AddMediatR(cfg =>
 builder.Services.AddMarten(opt =>
 {
     opt.Connection(builder.Configuration.GetConnectionString("Database")!);
+    
 }).UseLightweightSessions();
+
+if(builder.Environment.IsDevelopment())
+{
+    builder.Services.InitializeMartenWith<CatalogInitialData>();
+}
 
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
