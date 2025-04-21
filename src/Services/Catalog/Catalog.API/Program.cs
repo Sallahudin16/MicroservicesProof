@@ -1,4 +1,5 @@
 using Catalog.API.Data;
+using HealthChecks.UI.Client;
 using SharedKernel.Exceptions.Handler;
 using SharedKernel.PipelineBehaviors;
 
@@ -22,6 +23,8 @@ if(builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<CatalogInitialData>();
 }
 
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddCarter();
@@ -29,6 +32,10 @@ builder.Services.AddCarter();
 WebApplication app = builder.Build();
 
 app.MapCarter();
-
 app.UseExceptionHandler(options => { });
+app.UseHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
 app.Run();

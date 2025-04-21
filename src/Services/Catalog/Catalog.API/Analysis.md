@@ -11,6 +11,7 @@
 # Topics Covered
 
 - Vertical Slice Architecture
+- Health Checks
 ---
 - CQRS Pattern 
 - Minimal APIs Pattern
