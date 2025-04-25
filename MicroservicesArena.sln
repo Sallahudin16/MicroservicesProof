@@ -28,6 +28,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{B7F216
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "src\Services\Basket\Basket.API\Basket.API.csproj", "{7B769A1D-2BF5-4528-A929-BE79CE744422}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Analysis.md = Analysis.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Grpc", "src\Services\Discount\Discount.Grpc\Discount.Grpc.csproj", "{5CF7C7D1-9EB9-4485-9077-0738E61CB63C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +61,10 @@ Global
 		{7B769A1D-2BF5-4528-A929-BE79CE744422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B769A1D-2BF5-4528-A929-BE79CE744422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B769A1D-2BF5-4528-A929-BE79CE744422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF7C7D1-9EB9-4485-9077-0738E61CB63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF7C7D1-9EB9-4485-9077-0738E61CB63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF7C7D1-9EB9-4485-9077-0738E61CB63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF7C7D1-9EB9-4485-9077-0738E61CB63C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +76,10 @@ Global
 		{51E92084-06BA-4FDC-A86D-D16C000B4545} = {4321B90C-B450-4D51-8C00-4D41FAF2DAAB}
 		{B7F216F2-C616-4018-9B45-0E3AE4AF7EB3} = {B1CCA44A-166B-4077-8C3F-635B87EA005E}
 		{7B769A1D-2BF5-4528-A929-BE79CE744422} = {B7F216F2-C616-4018-9B45-0E3AE4AF7EB3}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {B1CCA44A-166B-4077-8C3F-635B87EA005E}
+		{5CF7C7D1-9EB9-4485-9077-0738E61CB63C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1083738-3159-4F29-A9F2-24F2423D3657}
 	EndGlobalSection
 EndGlobal
